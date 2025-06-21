@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <title>JujuCorp | Home</title>
+  <link rel="icon" href="assets/jujucorp.png" type="image/png" />
+
+  
+<script>
+  let lopo = localStorage.getItem("lopo") === "true"; // Load saved preference
+
+  function applyStyle() {
+    const styleFile = lopo ? "lopo-style.htm" : "style.htm";
+
+    const oldStyle = document.getElementById("dynamic-style");
+    if (oldStyle) oldStyle.remove();
+
+    fetch(styleFile)
+      .then(response => {
+        if (!response.ok) throw new Error("Failed to fetch style");
+        return response.text();
+      })
+      .then(css => {
+        const styleContainer = document.createElement("div");
+        styleContainer.innerHTML = css;
+        const newStyle = styleContainer.querySelector("style");
+        newStyle.id = "dynamic-style";
+        document.head.appendChild(newStyle);
+        console.log(lopo ? "Lopo Mode" : "Normal Mode");
+      })
+      .catch(error => {
+        console.error("Style failed to load:", error);
+      });
+  }
+
+  function toggleStyle() {
+    lopo = !lopo;
+    localStorage.setItem("lopo", lopo); // Save preference
+    applyStyle();
+  }
+
+  applyStyle(); // Apply saved style on page load
+</script>
+</head>
+
+<body>
+<div class="title">
+  <h1>~ Welcome to the JujuCorp! ~</h1>
+  <div class="underline"></div>
+</div>
+
+<span id="download-count">Loading...</span>
+<script src="stats.js"></script>
+
+  <div class="box1">
+    <div class="about-flex">
+      <img src="assets/interrogation-red.png" alt="Red question mark icon" class="about-int-red" />
+      <div class="about-text">
+        <h2>About us</h2>
+        <div class="subtitle-underline"></div>
+        <p>
+          Based around the popular game Minecraft, the JujuCorp is a development studio owned by Just2UDC. We have developed many datapacks and many more are to come! Come and follow us on our journey or explore our already made project!
+        </p>
+      </div>
+      <img src="assets/interrogation-red.png" alt="Red question mark icon" class="about-int-red" />
+    </div>
+  </div>
+
+  <div class="box-row">
+    <div class="box-stack">
+      <div class="box3">
+        <div class="about-text">
+          <h2>Our Projects</h2>
+          <div class="subtitle-underline"></div>
+          <p>
+            Go explore our projects, you'll find a variety of quality of life features, epic weapons and so much more! Click the button below to see all the released projects.
+          </p>
+          <a href="projects.htm" target="_self" class="learn-more">Learn More</a>
+        </div>
+      </div>
+      <div class="box4">
+        <div class="about-text">
+          <h2>Our Team</h2>
+          <div class="subtitle-underline"></div>
+          <p>
+            Nothing can exist without the work of talented individuals, and at last news, the JujuCorp is something. Go discover the faces behind the JujuCorp's projects and learn more about our amazing team, the JujuCorp wouldn't be there without them!
+          </p>
+          <a href="team.htm" target="_self" class="learn-more">Learn More</a>
+        </div>
+      </div>
+    </div>
+    <div class="box2">
+      <iframe
+        src="https://discord.com/widget?id=1230545913433559182&theme=light"
+        allowtransparency="true"
+        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+      </iframe>
+    </div>
+  </div>
+
+  <footer id="footer-placeholder"></footer>
+
+  <script>
+    fetch("footer.htm")
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+      })
+      .then(html => {
+        document.getElementById('footer-placeholder').outerHTML = html;
+      })
+      .catch(error => {
+        console.error('Failed to load footer:', error);
+        document.getElementById('footer-placeholder').innerHTML = '<p>Footer failed to load.</p>';
+      });
+  </script>
+</body>
+</html>

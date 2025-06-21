@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <title>JujuCorp | Projects</title>
+  <link rel="icon" href="assets/jujucorp.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+<script>
+  let lopo = localStorage.getItem("lopo") === "true"; // Load saved preference
+
+  function applyStyle() {
+    const styleFile = lopo ? "lopo-style.htm" : "style.htm";
+
+    const oldStyle = document.getElementById("dynamic-style");
+    if (oldStyle) oldStyle.remove();
+
+    fetch(styleFile)
+      .then(response => {
+        if (!response.ok) throw new Error("Failed to fetch style");
+        return response.text();
+      })
+      .then(css => {
+        const styleContainer = document.createElement("div");
+        styleContainer.innerHTML = css;
+        const newStyle = styleContainer.querySelector("style");
+        newStyle.id = "dynamic-style";
+        document.head.appendChild(newStyle);
+        console.log(lopo ? "Lopo Mode" : "Normal Mode");
+      })
+      .catch(error => {
+        console.error("Style failed to load:", error);
+      });
+  }
+
+  function toggleStyle() {
+    lopo = !lopo;
+    localStorage.setItem("lopo", lopo); // Save preference
+    applyStyle();
+  }
+
+  applyStyle(); // Apply saved style on page load
+</script>
+</head>
+<body>
+<div class="title">
+  <h1>~ Welcome to the JujuCorp! ~</h1>
+  <div class="underline"></div>
+</div>
+<span id="download-count">Loading...</span>
+<script src="stats.js"></script>
+<div class="box1-team">
+  <div class="team-about-flex">
+    <a href="https://modrinth.com/datapack/all-ore-beacon" target="_blank"><img src="https://cdn.modrinth.com/data/FaNsQk41/da5b5cddd74d1d2719b64a67190e642347fe12b9_96.webp" alt="All Ore Beacon" class="about-int-red" /></a>
+    <div class="team-info-horizontal" style="flex: 1;">
+      <div style="flex: 1;">
+        <a href="https://modrinth.com/datapack/all-ore-beacon" target="_blank"><h2>
+          All Ore Beacon <em>- Just a Datapack that allow you to make beacon with all minerals!</em>
+        </h2>
+        </a>
+        <h5>
+          Did you ever found it frustrating that you can't use the beautiful blue lapis or your oxidize copper for your beacon? Fear not, I added the possibility to make beacon out of all ores!
+        </h5>
+        <h5>
+          
+          Features: 
+        <div class=team-links>
+          <li>All oxidation of copper</li>
+          <li>All waxed of copper</li>
+          <li>Amethyst</li>
+          <li>Quartz</li>
+          <li>Coal</li>
+          <li>Redstone</li>
+          <li>Lapis</li>
+        </div>
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="box1-team">
+  <div class="team-about-flex">
+    <a href="https://modrinth.com/datapack/ember-disc" target="_blank"><img src="https://cdn.modrinth.com/data/9eFh9XpF/8dd7369fd578b606f25dbfad7cffa79c90287ad8_96.webp" alt="Ember Disc" class="about-int-red" /></a>
+    <div class="team-info-horizontal" style="flex: 1;">
+      <div style="flex: 1;">
+        <a href="https://modrinth.com/datapack/ember-disc" target="_blank"><h2>
+          Ember Disc <em>- Just a datapack that add new music disc composed by Ember7</em>
+        </h2>
+        </a>
+        <h5>
+          Have you ever feel that there are not enough minecraft music disc? Anyways this pack is there and adds many new dics composed by Ember7!
+        </h5>
+  <h5>To give the disc in creative use:<div style="font-family: 'minecraft', sans-serif">/function ember_disc:give/[disc_name]</div></h5>
+        <h5>
+          Disc and optention:
+        <div class=team-links>
+          <li>8-Bit Matrix (Loot from creepers killed by skeletons)</li>
+          <li>Perfect Facade (Loot from creepers killed by skeletons)</li>
+          <li>Derelict Radion (Crafted from resin)</li>
+          <li>Beautiful Tears (Found in suspicious gravel from cold ocean ruins)</li>
+          <li>Mechanical Amalgation (Found in fortress loot chest)</li>
+          <li>A Time Before (Traded from piglins)</li>
+          <li>Golden Fethers (Found in end city loot chest)</li>
+        </div>
+        </h5>
+        <h5>
+          Songs made by <a href="https://www.youtube.com/channel/UCZ2D_EXCPBcgalf8QMtJhLw" style="color: black"><span>Ember7</span></a>
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="box1-team">
+  <div class="team-about-flex">
+    <a href="https://modrinth.com/datapack/just-better-impaling" target="_blank"><img src="https://cdn.modrinth.com/data/Cn7b0Z7h/4c250d9893693aa5b725a669d2ac81bfd5070b63_96.webp" alt="Just Better Impaling" class="about-int-red" /></a>
+    <div class="team-info-horizontal" style="flex: 1;">
+      <div style="flex: 1;">
+        <a href="https://modrinth.com/datapack/just-better-impaling" target="_blank"><h2>
+          Just Better Impaling <em>- Just a datapack that makes impaling usable...</em>
+        </h2>
+        </a>
+        <h5>
+          Trident in bedrock are better for a simple reason: impaling work on any mob touching water... This datapack fixes the issue by making the trident as powerfull than an enchanted axe when raining or under water.
+        </h5>
+        <h5>
+          When enchanted with Impaling V, the trident deals 13 damage, but if you deal a crit, this goes up to 17.
+        </div>
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="box1-team">
+  <div class="team-about-flex">
+    <a href="https://modrinth.com/datapack/all-ore-beacon" target="_blank"><img src="https://cdn.modrinth.com/data/FaNsQk41/da5b5cddd74d1d2719b64a67190e642347fe12b9_96.webp" alt="All Ore Beacon" class="about-int-red" /></a>
+    <div class="team-info-horizontal" style="flex: 1;">
+      <div style="flex: 1;">
+        <a href="https://modrinth.com/datapack/all-ore-beacon" target="_blank"><h2>
+          All Ore Beacon <em>- Just a Datapack that allow you to make beacon with all minerals!</em>
+        </h2>
+        </a>
+        <h5>
+          Did you ever found it frustrating that you can't use the beautiful blue lapis or your oxidize copper for your beacon? Fear not, I added the possibility to make beacon out of all ores!
+        </h5>
+        <h5>
+          
+          Features: 
+        <div class=team-links>
+          <li>All oxidation of copper</li>
+          <li>All waxed of copper</li>
+          <li>Amethyst</li>
+          <li>Quartz</li>
+          <li>Coal</li>
+          <li>Redstone</li>
+          <li>Lapis</li>
+        </div>
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>
+  <footer id="footer-placeholder"></footer>
+  <script>
+    fetch("footer.htm")
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+      })
+      .then(html => {
+        document.getElementById('footer-placeholder').outerHTML = html;
+      })
+      .catch(error => {
+        console.error('Failed to load footer:', error);
+        document.getElementById('footer-placeholder').innerHTML = '<p>Footer failed to load.</p>';
+      });
+  </script>
+</body>
+</html>

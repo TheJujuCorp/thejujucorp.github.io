@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <title>JujuCorp | The Team</title>
+  <link rel="icon" href="assets/jujucorp.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+<script>
+  window.addEventListener("load", () => {
+    const isLopo = localStorage.getItem("lopo") === "true";
+    const imgJust2udc = document.getElementById("just2udc-img");
+  });
+</script>
+<script>
+  window.addEventListener("load", () => {
+    const isLopo = localStorage.getItem("lopo") === "true";
+    const imgKirbo4u = document.getElementById("kirbo4u-img");
+  });
+</script>
+</head>
+<body>
+  <div class="title">
+  <h1>~ Welcome to the JujuCorp! ~</h1>
+  <div class="underline"></div>
+</div>
+
+<span id="download-count">Loading...</span>
+<script src="stats.js"></script>
+<script>
+  let lopo = localStorage.getItem("lopo") === "true"; // Load saved preference
+
+function applyStyle() {
+  const styleFile = lopo ? "lopo-style.htm" : "style.htm";
+
+  const oldStyle = document.getElementById("dynamic-style");
+  if (oldStyle) oldStyle.remove();
+
+  fetch(styleFile)
+    .then(response => {
+      if (!response.ok) throw new Error("Failed to fetch style");
+      return response.text();
+    })
+    .then(css => {
+      const styleContainer = document.createElement("div");
+      styleContainer.innerHTML = css;
+      const newStyle = styleContainer.querySelector("style");
+      newStyle.id = "dynamic-style";
+      document.head.appendChild(newStyle);
+      console.log(lopo ? "Lopo Mode" : "Normal Mode");
+
+      // 🔁 Also update images here on page load
+      const imgJust2udc = document.getElementById("just2udc-img");
+      const imgKirbo4u = document.getElementById("kirbo4u-img");
+
+      if (imgJust2udc) {
+        imgJust2udc.src = lopo ? "assets/very-important.png" : "assets/just2udc.png";
+      }
+
+      if (imgKirbo4u) {
+        imgKirbo4u.src = lopo ? "assets/very-important-2.png" : "assets/kirbo4u.png";
+      }
+    })
+    .catch(error => {
+      console.error("Style failed to load:", error);
+    });
+}
+
+function toggleStyle() {
+  lopo = !lopo;
+  localStorage.setItem("lopo", lopo);
+  applyStyle();
+
+  const imgJust2udc = document.getElementById("just2udc-img");
+  const imgKirbo4u = document.getElementById("kirbo4u-img");
+
+  if (imgJust2udc) {
+    imgJust2udc.src = lopo ? "assets/very-important.png" : "assets/just2udc.png";
+  }
+
+  if (imgKirbo4u) {
+    imgKirbo4u.src = lopo ? "assets/very-important-2.png" : "assets/kirbo4u.png";
+  }
+}
+
+  applyStyle(); // Apply saved style on page load
+</script>
+
+<div class="box1-team">
+  <div class="team-about-flex">
+    <img id="just2udc-img" src="assets/just2udc.png" alt="just2udc" class="about-int-red" />
+    <div class="team-info-horizontal" style="flex: 1;">
+      <div style="flex: 1;">
+        <h2>
+          Just2UDC <em>- Owner & Lead Datapack Dev</em>
+        </h2>
+        <p style="font-family: 'Roboto', sans-serif; max-width: none; flex: 1;">
+          Hi! I'm Just2, the founder and owner of the JujuCorp. I'm a big Minecraft nerd who likes messing around with commands and datapack stuff. I also enjoy building, coding, cooking, drawing, and other creative projects! If you have any issues with your project I'm always happy to help out!
+        </p>
+        <div class=team-h4>
+          
+          Links: 
+        </div>
+        <div class=team-links>
+        <li><a href="https://www.youtube.com/channel/UCrWIrhDX9lgSvbGRjHcSeCw" target="_blank">YouTube</a></li>
+        <li><a href="https://modrinth.com/user/Just2UDC" target="_blank">Modrinth</a></li>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="box1-team">
+  <div class="team-about-flex">
+    <img src="assets/ember7.png" alt="ember7" class="about-int-red" />
+    <div class="team-info-horizontal" style="flex: 1;">
+      <div style="flex: 1;">
+        <h2>
+          Ember7 <em>- Builder & Composer</em>
+        </h2>
+        <p style="font-family: 'Roboto', sans-serif; max-width: none; flex: 1;">
+          Hello, I am Ember, I am a builder and composer for the JuJuCorp. I enjoy drawing, sculpture, composing, recording videos, baking, cooking, exercising, building, pixel art, and making models.
+        </p>
+        <div class=team-h4>
+          
+          Links: 
+        </div>
+        <div class=team-links>
+          <li><a href="https://www.youtube.com/channel/UCZ2D_EXCPBcgalf8QMtJhLw" target="_blank">YouTube</a></li>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="box1-team">
+  <div class="team-about-flex">
+    <img id="kirbo4u-img" src="assets/kirbo4u.png" alt="kirbo4u" class="about-int-red" />
+    <div class="team-info-horizontal" style="flex: 1;">
+      <div style="flex: 1;">
+        <h2>
+          Kirbo <em>- Infrastructure Chief</em>
+        </h2>
+        <p style="font-family: 'Roboto', sans-serif; max-width: none; flex: 1;">
+          Sup, I'm in charge of managing the servers in the JujuCorp.
+        </p>
+        <p style="font-family: 'Roboto', sans-serif; max-width: none; flex: 1;">
+        I munch on the company's servers in secret. >:3 
+        </p>
+        <p style="font-family: 'Roboto', sans-serif; max-width: none; flex: 1;">
+          Don't tell my boss pls, I don't want to get fired. 
+        </p>
+        <div class=team-h4>
+        
+          Links: 
+        </div>
+        <div class=team-links>
+          <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1&pp=ygUXbmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXCgBwE%3D" target="_blank">YouTube</a></li>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="box1-team">
+  <div class="team-about-flex">
+    <button onclick="toggleStyle()"><img src="assets/lopo.png" alt=".lopotitchat" class="about-int-red" /></button>
+    <div class="team-info-horizontal" style="flex: 1;">
+      <div style="flex: 1;">
+        <h2>
+          .lopotitchat <em>- Head Moderator</em>
+        </h2>
+        <p style="font-family: 'Roboto', sans-serif; max-width: none; flex: 1;">
+          Hello, I'm Lopo, the Great Mod of the JuJuCorp. I'm the one who maintain peace and order, I'm not the best for the work, but Spider-man : Across the Spider-verse is my favortie animated film so... Oh, I almost forgot...English is not my first language so I can make mistake. I hope Juju will correct me...
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+  <footer id="footer-placeholder"></footer>
+    <script>
+    fetch("footer.htm")
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+      })
+      .then(html => {
+        document.getElementById('footer-placeholder').outerHTML = html;
+      })
+      .catch(error => {
+        console.error('Failed to load footer:', error);
+        document.getElementById('footer-placeholder').innerHTML = '<p>Footer failed to load.</p>';
+      });
+  </script>
+</body>
+</html>

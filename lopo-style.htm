@@ -1,0 +1,363 @@
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+<style>
+    @font-face {
+      font-family: "MinecraftBold";
+      src: url("fonts/MinecraftBold-nMK1.otf") format("opentype");
+    }
+
+    @font-face {
+      font-family: "Minecraft";
+      src: url("fonts/MinecraftRegular-Bmg3.otf") format("opentype");
+    }
+
+    @font-face {
+      font-family: "Lopo";
+      src: url("fonts/Adine\ Kirnberg.ttf") format("opentype");
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Roboto', sans-serif;
+      color: white;
+      background: url("assets/background-lopo.png") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    .title h1 {
+      font-family: "Lopo", sans-serif;
+      font-size: 3rem;
+      margin: 50px auto 10px;
+      font-weight: bold;
+      text-align: center;
+      font-size: 5rem;
+      color: white;
+    }
+
+    .subtitle-underline {
+      height: 2px;
+      margin: auto;
+      width: 50%;
+      background-color: black;
+      align-self: center;
+    }
+
+    .underline {
+      width: 100%;
+      background: white;
+      margin: auto;
+      height: 2px;
+    }
+
+    #download-count {
+      font-family: 'Minecraft', sans-serif;
+      font-size: 1.4rem;
+      color: white;
+      margin: 0 auto 40px;
+      display: block;
+      text-align: center;
+    }
+
+    .box1,
+    .box2,
+    .box3,
+    .box4 {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      color: black;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.3rem;
+    }
+
+    .box1 {
+      width: 80%;
+      max-width: 1200px;
+      margin-top: 40px;
+    }
+
+    .box2 {
+      width: 430px;
+      min-height: 572px;
+      margin-bottom: 40px;
+    }
+
+    .box3,
+    .box4 {
+      min-height: 286px;
+    }
+
+    .box-row {
+      display: flex;
+      width: 80%;
+      max-width: 1200px;
+      margin-top: 30px;
+      gap: 20px;
+    }
+
+    .box-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1;
+    }
+
+    iframe {
+      width: 385px;
+      height: 550px;
+      border: none;
+      display: block;
+      margin: 0 auto;
+    }
+
+    a.learn-more {
+      font-family: "Lopo", sans-serif;
+      font-size: 2rem;
+      color: black;
+      text-decoration: none;
+      transition: text-decoration 0.2s;
+    }
+
+    a.learn-more:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      width: 100%;
+      background-color: white;
+      color: black;
+      padding: 0px 20px;
+      margin-top: auto;
+      height: fit-content;
+      font-family: 'Roboto', sans-serif;
+      box-sizing: border-box;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-logo {
+      max-width: 120px;
+      margin-bottom: -20px;
+    }
+
+    .footer-buttons-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      justify-items: center;
+    }
+
+    .footer-buttons-grid a img {
+      width: 36px;
+      height: 36px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .footer-buttons-grid a img:hover {
+      transform: scale(1.1);
+    }
+    .about-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text h2 {
+      font-family: "Lopo", sans-serif;
+      text-align: center;
+      color: black;
+      margin: 0;
+      font-size: 2.5rem
+    }
+
+    .about-int-red {
+      max-width: 150px;
+      height: auto;
+      border-radius: 8px;
+    }
+    .footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-columns {
+  display: flex;
+  gap: 50px;
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.footer-column {
+  max-width: 200px;
+}
+
+.footer-column h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: black;
+  font-family: "MinecraftBold", sans-serif;
+}
+
+.footer-column a {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: black;
+  text-decoration: none;
+  font-family: "Minecraft", sans-serif;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-legal {
+  text-align: center;
+  margin-top: -10px;
+  font-size: 0.8rem;
+  color: #333;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+    .box1-team {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      color: black;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.3rem;
+      width: 80%;
+      max-width: 1200px;
+      margin-bottom: 40px;
+    }
+
+.team-about-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.team-avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.team-info-horizontal em {
+  font-family: 'Minecraft', sans-serif;
+  font-size: 1.8rem;
+  color: #555;
+  white-space: nowrap;
+  margin-top: -10px
+}
+
+.team-info-horizontal {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  margin-top: -20px;
+}
+
+.team h2 {
+  font-family: 'MinecraftBold', sans-serif;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  margin-top: -10px;
+}
+
+.team h3 {
+  font-family: 'Minecraft', sans-serif;
+  font-style: italic;
+  font-size: 0.8rem;
+  color: #555;
+  white-space: nowrap;
+  margin-top: -10px;
+}
+
+.team-h4 {
+  font-size: 1.2rem;
+  line-height: 1;
+  color: #333;
+  max-width: 300px;
+  font-family: 'Minecraft', sans-serif;
+}
+
+.team-info-horizontal p {
+  font-size: 1rem;
+  color: #333;
+  margin-top: -10px;
+  font-family: 'Minecraft', sans-serif;
+}
+
+.team-links a {
+  font-size: 1rem;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+}
+
+.team-about-flex button {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.team-about-flex h5 {
+  font-family: 'Roboto', sans-serif; 
+  max-width: none;
+  flex: 1
+}
+
+.team-about-flex h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: black;
+  text-decoration: none;
+  font-family: "MinecraftBold", sans-serif;
+}
+
+
+.team-about-flex a:hover {
+  text-decoration: underline;
+}
+
+.team-about-flex em {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: black;
+  text-decoration: none;
+  font-family: "Minecraft", sans-serif;
+}
+  </style>
